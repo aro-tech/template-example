@@ -7,7 +7,7 @@ Requires Java 8
 
 [EmployeeTest.java] (https://github.com/aro-tech/template-example/blob/master/src/test/java/org/example/test/EmployeeTest.java) is an example of a test class using test fixture mixins, including custom-generated AssertJ assertions.
 
-With the maven command `mvn assertj:generate-assertions` you can generate custom assertions for the example JavaBeans. That's how classes here like EmployeeAssert were generated automatically.
+With the maven command `mvn assertj:generate-assertions` you can generate custom assertions for the example JavaBeans. That's how classes here like [EmployeeAssert] (https://github.com/aro-tech/template-example/blob/master/src/test/java/org/example/EmployeeAssert.java) were generated automatically.
 
 In the src/test/resources directory there are custom templates for the generation of these assertions which allow extra fluidity. 
 
