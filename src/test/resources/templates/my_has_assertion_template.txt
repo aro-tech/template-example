@@ -1,0 +1,55 @@
+
+  /**
+   * Verifies that the actual ${class_to_assert}'s ${property} is equal to the given one.
+   * @param ${property_safe} the given ${property} to compare the actual ${class_to_assert}'s ${property} to.
+   * @return this assertion object.
+   * @throws AssertionError - if the actual ${class_to_assert}'s ${property} is not equal to the given one.${throws_javadoc}
+   */
+  public ${self_type} has${Property}(${propertyType} ${property_safe}) ${throws}{
+    // check that actual ${class_to_assert} we want to make assertions on is not null.
+    isNotNull();
+
+    // overrides the default error message with a more explicit one
+    String assertjErrorMessage = "\nExpecting ${property} of:\n  <%s>\nto be:\n  <%s>\nbut was:\n  <%s>";
+    
+    // null safe check
+    ${propertyType} actual${Property} = actual.get${Property}();
+    if (!Objects.areEqual(actual${Property}, ${property_safe})) {
+      failWithMessage(assertjErrorMessage, actual, ${property_safe}, actual${Property});
+    }
+
+    // return the current assertion for method chaining
+    return ${myself};
+  }
+  
+  /**
+   * Verifies that the actual ${class_to_assert}'s ${property} matches the given Predicate.
+   * @param ${property_safe}Predicate the given Predicate to evaluate the actual ${class_to_assert}'s ${property}.
+   * @return this assertion object.
+   * @throws AssertionError - if the actual ${class_to_assert}'s ${property} does not match the given predicate.${throws_javadoc}
+   */
+  public ${self_type} has${Property}Matching(java.util.function.Predicate<${propertyType}> ${property_safe}Predicate) ${throws}{
+    // check that actual ${class_to_assert} we want to make assertions on is not null.
+    isNotNull();
+
+    // overrides the default error message with a more explicit one
+    String assertjErrorMessage = "\nProperty ${property} of:\n  <%s>\nfailed to match a given Predicate";
+    
+    // null safe check
+    ${propertyType} actual${Property} = actual.get${Property}();
+    if (!${property_safe}Predicate.test(actual${Property})) {
+      failWithMessage(assertjErrorMessage, actual, actual${Property});
+    }
+
+    // return the current assertion for method chaining
+    return ${myself};
+  }
+  
+     /**
+   * Maps this ${custom_assertion_class} instance to a StringAssert on the toString of the actual object 
+   * @return A StringAssert for the toString of this Assertion's actual object
+   */
+  public org.assertj.core.api.AbstractCharSequenceAssert<?, String> has${Property}AsString() {
+	    this.isNotNull();
+		return org.assertj.core.api.Assertions.assertThat(actual.get${Property}()).asString();
+  }
