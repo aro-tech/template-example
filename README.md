@@ -13,5 +13,16 @@ Note that the generated standard endpoint `Assertions.java` is not a class but a
 
 Unfortunately, for now ([known issue] (https://github.com/joel-costigliola/assertj-assertions-generator/issues/65)), the AssertJ assertions generator does not allow renaming of the standard endpoint class, which is why EmployeeTest is defined using `implements org.example.assertions.generated.Assertions` instead of something like `implements CustomAssertionsMixin`. There are other classes named "Assertions", so I felt the need to use the fully qualified name for clarity.
 
+## How the mixin is generated
+
+The *pom.xml* contains the plugin "assertj-assertions-generator-maven-plugin" and configures it to specify which JavaBeans to target and which template files to override.
+
+
+The customized template files are at https://github.com/aro-tech/template-example/tree/master/src/test/resources/templates
+
+The template *my_assertions_entry_point_class_template.txt* defines Assertions not as a class but as an interface (and one which extends mixins for standard AssertJ and JUnit assertions from tdd-mixins-junit4.
+
+The template *my_assertion_entry_point_method_template.txt* defines each method of Assertions as a default method rather than a public static method.
+
 ##Blog
 [![The Green Bar](https://img.shields.io/badge/My_Blog:-The_Green_Bar-brightgreen.svg)](https://thegreenbar.wordpress.com/)
