@@ -17,8 +17,7 @@ Unfortunately, for now ([known issue] (https://github.com/joel-costigliola/asser
 
 ## How the mixin is generated
 
-The *pom.xml* contains the plugin "assertj-assertions-generator-maven-plugin" and configures it to specify which JavaBeans to target and which template files to override.
-
+The [pom.xml] (https://github.com/aro-tech/template-example/blob/master/pom.xml) contains the plugin "assertj-assertions-generator-maven-plugin" (which allows us, as mentioned above, to call maven with the goal `assertj:generate-assertions`) and configures it to specify which JavaBeans to target and which template files to override.
 
 The customized template files are in [src/test/resources/templates/] (https://github.com/aro-tech/template-example/tree/master/src/test/resources/templates) 
 
