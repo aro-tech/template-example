@@ -34,8 +34,10 @@ I added method templates to generate methods like `hasEmployerMatching` which le
 
 I also added a method to allow switching from the target JavaBean's assertion (e.g. EmployeeAssert) to a StringAssert on the toString() of the member JavaBean.  So we can call `assertThat(employee).hasEmployerAsString().doesNotContain("Initrode")`. 
 
-# Limitations
-I would have liked to go farther with this, but the custom assertions generator does not allow conditional processing in the templates.  It would be nice to be able to call something like `assertThat(employee).hasEmployerThat().hasAddressThat().hasPostalCode("11235")`, but I think this is only possible if you manually add methods to the generated asserts.  I tried adding a `has${Property}That()` method in the templates, but in too many cases it generated compiler errors.  There's an [open issue related to this] (https://github.com/joel-costigliola/assertj-assertions-generator/issues/67).
+Thanks to a patch to AssertJ by jstrachan of fabric8.io, I was also able to tweak the templates to provide navigation like the following:
+
+`assertThat(underTest).employer().address().postalCode().startsWith("11");`
+
 
 
 # Examples of the tests you can write

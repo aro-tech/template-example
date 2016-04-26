@@ -36,7 +36,7 @@ public class EmployeeTest implements org.example.assertions.generated.Assertions
 	 */
 	@Test
 	public void test_using_normally_generated_methods() {
-		
+
 		assertThat(underTest).hasEmployer(acme).hasEntryDate(entryDate).hasName(employeeName)
 				.hasTitle("Data Scientist");
 		assertThat(underTest).hasToString(
@@ -48,7 +48,6 @@ public class EmployeeTest implements org.example.assertions.generated.Assertions
 		assertThat(underTest.getEmployer().getAddress()).hasCity("Fibonacci").hasPostalCode("11235");
 	}
 
-	
 	/**
 	 * new-style calls (with much more flexible matching than just equals())
 	 * ...enabled by my_has_assertion_template.txt:
@@ -62,8 +61,15 @@ public class EmployeeTest implements org.example.assertions.generated.Assertions
 							.as("Expecting not Initrode").hasNameMatching(name -> !"Initrode".equals(name));
 					return true;
 				}).as(expectingScientistErrorMsg).hasTitleMatching(title -> title.contains("Scientist"));
-		
+
 		assertThat(underTest).hasEmployerAsString().doesNotContain("Initrode");
+	}
+
+	@Test
+	public void test_using_custom_smooth_navigation() {
+		// Thanks to jstrachan of fabric8.io for pointing me to the AssertJ
+		// patch which made the following possible:
+		assertThat(underTest).employer().address().postalCode().startsWith("11");
 	}
 
 	/**
