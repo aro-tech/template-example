@@ -81,7 +81,7 @@ public class AddressAssert extends AbstractAssert<AddressAssert, Address> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasCityAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getCity()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getCity()).asString();
   }
 
   /**
@@ -136,7 +136,7 @@ public class AddressAssert extends AbstractAssert<AddressAssert, Address> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasCountryAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getCountry()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getCountry()).asString();
   }
 
   /**
@@ -191,7 +191,7 @@ public class AddressAssert extends AbstractAssert<AddressAssert, Address> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasPostalCodeAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getPostalCode()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getPostalCode()).asString();
   }
 
   /**
@@ -246,7 +246,7 @@ public class AddressAssert extends AbstractAssert<AddressAssert, Address> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasStateOrTerritoryAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getStateOrTerritory()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getStateOrTerritory()).asString();
   }
 
   /**
@@ -301,7 +301,7 @@ public class AddressAssert extends AbstractAssert<AddressAssert, Address> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasStreetAddressAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getStreetAddress()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getStreetAddress()).asString();
   }
 
 }

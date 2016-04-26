@@ -62,7 +62,16 @@ public class EmployeeTest implements org.example.assertions.generated.Assertions
 							.as("Expecting not Initrode").hasNameMatching(name -> !"Initrode".equals(name));
 					return true;
 				}).as(expectingScientistErrorMsg).hasTitleMatching(title -> title.contains("Scientist"));
+		
+		assertThat(underTest).hasEmployerAsString().doesNotContain("Initrode");
 	}
 
+	/**
+	 * Plain old AssertJ, but inherited rather than imported statically
+	 */
+	@Test
+	public void test_using_standard_assertj_via_tdd_mixins() {
+		assertThat(47).isGreaterThan(42);
+	}
 
 }

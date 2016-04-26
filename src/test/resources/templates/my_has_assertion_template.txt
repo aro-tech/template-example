@@ -51,5 +51,5 @@
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> has${Property}AsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.get${Property}()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.get${Property}()).asString();
   }

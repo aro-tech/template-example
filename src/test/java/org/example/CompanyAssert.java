@@ -81,7 +81,7 @@ public class CompanyAssert extends AbstractAssert<CompanyAssert, Company> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasAddressAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getAddress()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getAddress()).asString();
   }
 
   /**
@@ -136,7 +136,7 @@ public class CompanyAssert extends AbstractAssert<CompanyAssert, Company> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasNameAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getName()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getName()).asString();
   }
 
 }

@@ -81,7 +81,7 @@ public class EmployeeAssert extends AbstractAssert<EmployeeAssert, Employee> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasEmployerAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getEmployer()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getEmployer()).asString();
   }
 
   /**
@@ -136,7 +136,7 @@ public class EmployeeAssert extends AbstractAssert<EmployeeAssert, Employee> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasEntryDateAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getEntryDate()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getEntryDate()).asString();
   }
 
   /**
@@ -191,7 +191,7 @@ public class EmployeeAssert extends AbstractAssert<EmployeeAssert, Employee> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasNameAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getName()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getName()).asString();
   }
 
   /**
@@ -246,7 +246,7 @@ public class EmployeeAssert extends AbstractAssert<EmployeeAssert, Employee> {
    */
   public org.assertj.core.api.AbstractCharSequenceAssert<?, String> hasTitleAsString() {
 	    this.isNotNull();
-		return org.assertj.core.api.Assertions.assertThat(actual.getTitle()).asString();
+		return org.assertj.core.api.Assertions.assertThat("" + actual.getTitle()).asString();
   }
 
 }

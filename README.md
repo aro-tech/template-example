@@ -1,4 +1,5 @@
 # Examples of custom AssertJ mixins including generated assertions
+## A "Hello World" for using AssertJ custom assertions via a mixin
 
 Requires Java 8
 
