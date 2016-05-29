@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>com.github.aro-tech</groupId>
 			<artifactId>tdd-mixins-junit4</artifactId>
-			<version>0.7.2</version>
+			<version>0.7.3</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
